@@ -19,15 +19,23 @@ ou
   npm start
 ```
 - Necessário instalar o MongoDB na máquina.
-## Configurações de testes
 
-<img src ="https://github.com/Re04nan/heroesapi/captured/print-postman.PNG" alt="Print Teste no Postman">
-
+<details open>
+  <summary>
+    Print - Configurações de testes 
+  </summary>
   
+![Print teste Postman](https://github.com/Re04nan/heroesapi/blob/master/captured/print-postman.PNG)
+
+</details>
+
 ## API Reference
 
-#### Parte I
-
+<details open> 
+  <summary>
+    Parte I
+  </summary>
+  
 #### Get all heroes
 ```http
   GET /heroes/
@@ -56,7 +64,12 @@ ou
 | `rank` | `Number` | **Required** |
 | `active` | `Boolean` | default: true |
 
-#### Parte II
+</details>
+
+<details open> 
+  <summary>
+    Parte II
+  </summary>
 
 #### Get all powerstats
 ```http
@@ -84,6 +97,8 @@ ou
 | `name` | `String` | **Required** |
 | `value` | `Number` | valitate: Number.isInteger |
 
+</details>
+ 
 ## Techs Usadas
 
 Node, MongoDB, Docker, Docker-Composer, Bootstrap CDN
