@@ -1,0 +1,62 @@
+<% include partials/_header %>
+
+<div class="container">
+
+  <div class="row">
+    <div class="col-md-5">
+      <div class="card">
+        <div class="card-body">
+          <form action="/add" method="post">
+            <div class="form-group">
+              <input class="form-control" type="text" name="title" placeholder="Nome">
+            </div>
+            <div class="form-group">
+              <textarea class="form-control" name="description" cols="80"
+                placeholder="Descrição"
+                ></textarea>
+            </div>
+            <button class="btn btn-primary" type="submit">
+              Add
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-7">
+      <table class="table table-bordered table-hover">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>Descrição</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% for(var i=0; i < heroes.length; i++) { %>
+            <tr>
+              <td><%= i + 1%></td>
+              <td><strong><%= heroes[i].name %></strong></td>
+              <td><%= heroes[i].description %></td>
+              <td>
+                <a
+                  class="<%= heroes[i].active ? 'btn btn-success' : 'btn btn-dark'%>"
+                  href="/turn/<%= heroes[i]._id %>">Done</a>
+                <a href="/delete/<%= heroes[i]._id %>"
+                  class="btn btn-danger">
+                  Delete
+                </a>
+                <a href="/edit/<%= heroes[i]._id %>" class="btn btn-info">
+                  Edit
+                </a>
+              </td>
+            </tr>
+          <% } %>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+
+</div>
